@@ -11,6 +11,7 @@
   "devDependencies": {
     "babel-core": "^5.8.34",
     "babel-loader": "^5.3.3",
+    "react": "^0.14.3",
     "webpack": "^1.12.9"
   }
 }
