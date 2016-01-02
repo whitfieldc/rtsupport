@@ -19,3 +19,5 @@ ChannelSection.propTypes = {
 	setChannel: React.PropTypes.func.isRequired,
 	addChannel: React.PropTypes.func.isRequired
 }
+
+export default ChannelSection
