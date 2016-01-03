@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ChannelSection from './channels/ChannelSection.jsx';
-import MessageSection from './channels/MessageSection.jsx';
+import MessageSection from './messages/MessageSection.jsx';
 
 class App extends Component{
 	constructor(props){
@@ -21,6 +21,12 @@ class App extends Component{
  		this.setState({activeChannel});
  		// TODO: get channel's messages
  	}
+ 	addMessage(text){
+ 		let {messages} = this.state;
+ 		messages.push({id: messages.length, text});
+ 		this.setState({messages});
+ 		// TODO: Send to Server
+ 	}
 	render(){
 		return(
 
@@ -30,6 +36,11 @@ class App extends Component{
 					{...this.state}
 					addChannel={this.addChannel.bind(this)}
 					setChannel={this.setChannel.bind(this)} />
+				</div>
+				<div className="messages-container">
+					<MessageSection
+					{...this.state}
+					addMessage={this.addMessage.bind(this)} />
 				</div>
 			</div>
 		)
